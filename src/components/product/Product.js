@@ -24,8 +24,8 @@ class product extends Component {
         }
        return {
          ...product,
-         retailPrice: product.retailPrice/1000,
-         salePrice: product.salePrice/1000,
+         retailPrice: product.retailPrice/100,
+         salePrice: product.salePrice/100,
        }
       })
       this.setState({
