@@ -9,6 +9,10 @@ class product extends Component {
     super();
     this.state = {
       productsData: [],
+      totalItem:'',
+      query:'',
+      currentPage:'',
+      totalPage:'',
       sortValue:'asc',
       productsDataSorted:[]
     };
@@ -29,7 +33,11 @@ class product extends Component {
        }
       })
       this.setState({
-       productsData,
+        productsData : productsData,
+        query: res.data.metadata.query,
+        totalItem: res.data.metadata.total,
+        currentPage: res.data.metadata.page,
+        totalPage: res.data.metadata.pages,
       }) 
     })
   };
@@ -55,7 +63,6 @@ class product extends Component {
     this.setState({sortValue: event.target.value});
   }
 
-  
   render() {  
     return (
       <div>
@@ -69,6 +76,9 @@ class product extends Component {
           </div>
 
         </div>
+        <br/>
+        showing: {this.state.totalItem} items  {this.state.query}  | page {this.state.currentPage} of {this.state.totalPage}
+
         <div className="row">
           {             
              this.state.productsData.map(product => <ProductList key={product.id} name={product.name} imageUrl={product.imageUrl} salePrice={product.salePrice} retailPrice={product.retailPrice} quantityAvailable={product.quantityAvailable}  />)
