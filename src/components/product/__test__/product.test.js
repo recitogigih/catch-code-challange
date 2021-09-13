@@ -3,7 +3,6 @@ import Product  from "../product";
 import {render, cleanup , fireEvent, waitFor} from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 
-
 afterEach(()=>{
   cleanup()
 })

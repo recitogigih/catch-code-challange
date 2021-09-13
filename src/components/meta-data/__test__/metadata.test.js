@@ -6,9 +6,8 @@ afterEach(()=>{
   cleanup()
 })
 
-
 it("should render metada data correctly", async() => {
-  const {getByTestId} = await render(
+  const {getByTestId} = render(
     <MetaData
       totalItem="102"
       query="best sellers"
