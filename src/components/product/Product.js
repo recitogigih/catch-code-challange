@@ -4,6 +4,7 @@ import MetaData from '../meta-data/metada'
 import './product.css';
 import axios from 'axios';
 
+
 class product extends Component {
   _isMounted = false;
   constructor() {

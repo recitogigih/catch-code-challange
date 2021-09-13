@@ -1,11 +1,8 @@
 import React from "react";
 import Product  from "../product";
-// import ReactDOM from "react-dom";
 import {render, cleanup , fireEvent, waitFor} from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
-// import { Component } from "react";
-// import Select from 'react-select'
-// import selectEvent from 'react-select-event'
+
 
 afterEach(()=>{
   cleanup()
